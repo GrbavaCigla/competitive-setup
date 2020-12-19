@@ -13,5 +13,5 @@ PROGRAM="$(basename $1 .cpp)"
 PROGBIN="${BINPATH}/${PROGRAM}"
 PROGTEST="${TESTPATH}/${PROGRAM}"
 
-g++ $1 -o "${PROGBIN}"
-${PROGBIN}<"${PROGTEST}"
+g++ src/$1 -o "${PROGBIN}"
+time ${PROGBIN} < "${PROGTEST}"
