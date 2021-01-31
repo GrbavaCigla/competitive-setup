@@ -9,9 +9,9 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-PROGRAM="$(basename $1 .cpp)"
+PROGRAM="$(basename $1 .cs)"
 PROGBIN="${BINPATH}/${PROGRAM}"
 PROGTEST="${TESTPATH}/${PROGRAM}"
 
-g++ src/$1 -o "${PROGBIN}"
-time ${PROGBIN} < "${PROGTEST}"
+mcs src/$1 -out:"${PROGBIN}"
+time mono ${PROGBIN} < "${PROGTEST}"

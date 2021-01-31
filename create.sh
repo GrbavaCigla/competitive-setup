@@ -7,9 +7,9 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-PROGRAM="$(basename $1 .cpp)"
-SRCPATH="${HOMEPATH}/src/${PROGRAM}.cpp"
+PROGRAM="$(basename $1 .cs)"
+SRCPATH="${HOMEPATH}/src/${PROGRAM}.cs"
 TESTPATH="${HOMEPATH}/tests/${PROGRAM}"
 
-cp "${HOMEPATH}/boilerplate.cpp" "${SRCPATH}"
+cp "${HOMEPATH}/boilerplate.cs" "${SRCPATH}"
 touch ${TESTPATH}
